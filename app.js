@@ -1,7 +1,9 @@
 import express from "express";
 import mongoose from "mongoose";
+import userRoute from "./routes/user.route.js";
+import authRoute from "./routes/auth.route.js";
 
-
+//A2i1BBBbZSt48ooy
 mongoose
   .connect(
     "mongodb+srv://nimshakaravintha:A2i1BBBbZSt48ooy@mern-auth-app.obtvk.mongodb.net/?retryWrites=true&w=majority&appName=MERN-auth-app"
@@ -14,7 +16,11 @@ mongoose
   });
 
 const app = express();
+app.use(express.json());
 
 app.listen(3000, () => {
   console.log("Server is running on port 3000");
 });
+
+app.use("/api/user", userRoute);
+app.use("/api/auth", authRoute);
