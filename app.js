@@ -2,7 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import userRoute from "./routes/user.route.js";
 import authRoute from "./routes/auth.route.js";
-
+// test
 //A2i1BBBbZSt48ooy
 mongoose
   .connect(
